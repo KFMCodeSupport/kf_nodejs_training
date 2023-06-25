@@ -19,20 +19,19 @@ const users = [
       age: 35,
       name: 'User C'
     },
-    // Thêm người dùng khác tại đây nếu cần
   ];
 
-// Tạo server
+
 const server = http.createServer((req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
     const userNames = users.map(user => user.name);
-    const password = users.map(password => user.password);
-    res.end(userNames.join(', '));
-    res.end(password.join(', '));
+    const passwords = users.map(user => user.password);
+    const response = `User Names: ${userNames.join(', ')}\nPasswords: ${passwords.join(', ')}`;
+    res.end(response);
 });
 
-// Lắng nghe cổng 3000
+
 server.listen(3000, '0.0.0.0', () => {
   console.log('Server is running on http://127.0.0.1:3000/');
 });
