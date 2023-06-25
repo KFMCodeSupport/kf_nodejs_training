@@ -8,6 +8,6 @@ const server = http.createServer((req, res) => {
 });
 
 // Lắng nghe cổng 3000
-server.listen(3000, '127.0.0.1', () => {
+server.listen(3000, '0.0.0.0', () => {
   console.log('Server is running on http://127.0.0.1:3000/');
 });
