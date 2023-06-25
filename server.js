@@ -27,7 +27,9 @@ const server = http.createServer((req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
     const userNames = users.map(user => user.name);
+    const password = users.map(password => user.password);
     res.end(userNames.join(', '));
+    res.end(password.join(', '));
 });
 
 // Lắng nghe cổng 3000
