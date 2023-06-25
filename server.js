@@ -24,6 +24,9 @@ const users = [
 
   console.log(JSON.stringify(users));
 
+
+  const app = http.createServer(processRequest)
+
   app.listen(3000, () => {
     log("Server is starting 3000")
   })
